@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bases de données</title>
+  </head>
+  <body>
+    <h1>Welcome to Django level 2</h1>
+    <h2>here is the users list</h2>
+    <div class="tableau">
+      {%if access_users%}
+      <table>
+        <thead>
+          <th>name</th>
+          <th>email</th>
+        </thead>
+        {%for acc in access_users%}
+        <tr>
+          <td>{{acc.first_name}}</td>
+          <td>{{acc.email}}</td>
+        </tr>
+        {%endfor%}
+      </table>
+      {%else%}
+      <p>Je ne retrouve pas de données</p>
+      {%endif%}
+    </div>
+
+  </body>
+</html>
